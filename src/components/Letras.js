@@ -1,9 +1,11 @@
-export default function Letras({letras}) {
+export default function Letras({letras, liberaJogo}) {
     return (
       <div className="teclado">
             {letras.map((letra) => (
-                <div className="tecla">{letra}</div>
-            ))}    
+                <div                   
+                  key={letra} 
+                  className={liberaJogo}>{letra}</div>
+            ))}
       </div> 
     );
   }
