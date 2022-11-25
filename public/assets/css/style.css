@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tela-jogo{
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.canto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.img-forca{
+    width: 400px;
+    height: 466px;
+    margin-right: 150px;
+}
+
+.iniciar{
+    font-family: 'Roboto';
+    width: 200px;
+    height: 60px;
+    background-color: #27AE60;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.iniciar:hover{   
+    background-color: #52b37a;   
+}
+
+.palavra{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    color: #000000;
+    width: 400px;
+}
+
+.teclado{
+    width: 650px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tecla{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #39739D;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    background-color: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.tecla:hover{
+    background-color: #93d1fd;
+}
+
+.chute{
+    margin: 30px 0 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chute h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.chute input{
+    box-sizing: border-box;
+    width: 353px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    margin: 0 10px;
+}
+
+.chute button{
+    box-sizing: border-box;
+    width: 100px;
+    height: 40px;
+    background: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C76A1;
+    cursor: pointer;
+}
+
+.chute button:hover{
+    background-color: #93d1fd;
+}
