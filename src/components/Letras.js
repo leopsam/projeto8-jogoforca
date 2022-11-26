@@ -8,7 +8,7 @@ export default function Letras({letras, liberaJogo, setAtivado, ativado, setLetr
             data-test="letter"                 
             key={letra}            
             className={letraUsada.includes(letra) ? "tecla teclas-desativadas" : liberaJogo}
-            disabled={ativado} 
+            disabled={letraUsada.includes(letra) ? "disabled" : ativado}
             >{letra}
           </button>))}
       </div> 
@@ -17,6 +17,7 @@ export default function Letras({letras, liberaJogo, setAtivado, ativado, setLetr
     function letraSelecionada(letraClicada){
       let novoArrayLetrasCertas     
       setLetraUsada(letraUsada + letraClicada)
+      console.log(`clicou ${letraClicada}`)
 
         if(arrayPalavra.includes(letraClicada.toLowerCase())){
 
