@@ -14,13 +14,15 @@ export default function App() {
   const [erro, setErro] = useState(0)
   const [liberaJogo, setLiberaJogo] = useState("tecla teclas-desativadas")
   const [letraUsada, setLetraUsada] = useState([])
-  const [contaLetra, setContaLetra] = useState() 
+  const [contaLetra, setContaLetra] = useState()
   const [jaClicou, setJaClicou] = useState(false)
   const [chutePalavra, setChutePalavra] = useState('')
   const [ganhou, setGanhou] = useState('')
+  const [contagem, setContagem] = useState(0)
   const [arrayPalavra, setArrayPalavra] = React.useState(palavras.sort(comparador)[0].split(''))
+  let resultadoClass;
   console.log(arrayPalavra)
-  console.log(erro)
+  
 
   const alfabeto  = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   
@@ -38,6 +40,9 @@ export default function App() {
       setGanhou={setGanhou}
       setErro={setErro}
       setArrayPalavra={setArrayPalavra}
+      setLetraUsada={setLetraUsada}
+      setChutePalavra={setChutePalavra}
+      resultadoClass={resultadoClass}
       />
 
       <Letras 
@@ -50,6 +55,12 @@ export default function App() {
       contaLetra={contaLetra}
       setErro={setErro}
       erro={erro} 
+      contagem={contagem}
+      setContagem={setContagem}
+      setLiberaJogo={setLiberaJogo}
+      setGanhou={setGanhou}
+      ganhou={ganhou}
+      resultadoClass={resultadoClass}
       />
 
       <Chute 

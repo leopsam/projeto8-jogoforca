@@ -1,23 +1,21 @@
 import palavras from "../palavras";
-export default function Jogo({arrayPalavra, setLiberaJogo, setArrayPalavra, setJaClicou, setErro, jaClicou, setContaLetra, contaLetra, erro, ganhou, setGanhou}) {  
+export default function Jogo({arrayPalavra, setLetraUsada, resultadoClass, setLiberaJogo, setChutePalavra, setArrayPalavra, setJaClicou, setErro, jaClicou, setContaLetra, contaLetra, erro, ganhou, setGanhou}) {  
   function comparador() {
     return Math.random() - 0.5;
   }
-  function iniciaJogo(){ 
-   
-      //console.log(arrayPalavra)
-      setContaLetra(arrayPalavra.map((cl) => ' _ '))
+  
+  function iniciaJogo(){      
+      setContaLetra(arrayPalavra.map((cl) => ' _ '))          
       setLiberaJogo("tecla teclas-ativadas")
       setGanhou('')
       setErro(0)
+      setLetraUsada([])
+      setChutePalavra('')
 
-      setArrayPalavra(palavras.sort(comparador)[0].split(''))
-      
-    
-    
+      console.log(contaLetra)
   }
+  
 
-  let resultadoClass;
 
     if(ganhou === true){
       resultadoClass = "palavra venceu"
@@ -31,11 +29,11 @@ export default function Jogo({arrayPalavra, setLiberaJogo, setArrayPalavra, setJ
     return (
       <div className="tela-jogo">
         <div className="container">
-            <img className="img-forca" src={`./assets/img/forca${erro}.png`} />
+            <img className="img-forca" data-test="game-image" src={`./assets/img/forca${erro}.png`} />
         </div>
         <div className="container canto">
-            <button onClick={() => iniciaJogo()} className="iniciar">Escolha palavra</button>
-            <div className={resultadoClass}>   
+            <button onClick={() => iniciaJogo()} data-test="choose-word" className="iniciar">Escolha palavra</button>
+            <div data-test="word" data-answer={arrayPalavra.join('')} className={resultadoClass}>   
               {contaLetra}              
             </div>
         </div>
@@ -43,6 +41,7 @@ export default function Jogo({arrayPalavra, setLiberaJogo, setArrayPalavra, setJ
       
     );
   }
+
 
   
   

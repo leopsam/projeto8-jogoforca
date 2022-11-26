@@ -21,10 +21,12 @@ export default function Chute({liberaJogo, arrayPalavra, chutePalavra, setChuteP
       if(chutePalavra === palavraCerta){
         setGanhou(true)
         setLiberaJogo("tecla teclas-desativadas")
+        
       }else{
         setErro(6)
         setGanhou(false)
         setLiberaJogo("tecla teclas-desativadas")
+        
       }
 
     }
