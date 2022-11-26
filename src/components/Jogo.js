@@ -1,15 +1,32 @@
-export default function Jogo({arrayPalavra, setLiberaJogo, setJaClicou, jaClicou, setContaLetra, contaLetra, erro}) {  
-
+import palavras from "../palavras";
+export default function Jogo({arrayPalavra, setLiberaJogo, setArrayPalavra, setJaClicou, setErro, jaClicou, setContaLetra, contaLetra, erro, ganhou, setGanhou}) {  
+  function comparador() {
+    return Math.random() - 0.5;
+  }
   function iniciaJogo(){ 
-    if(jaClicou === false){
-      console.log(arrayPalavra)
+   
+      //console.log(arrayPalavra)
       setContaLetra(arrayPalavra.map((cl) => ' _ '))
       setLiberaJogo("tecla teclas-ativadas")
-      setJaClicou(true)
-    }else{
-      console.log('O jogo ja foi iniciado!')
-    }
+      setGanhou('')
+      setErro(0)
+
+      setArrayPalavra(palavras.sort(comparador)[0].split(''))
+      
+    
+    
   }
+
+  let resultadoClass;
+
+    if(ganhou === true){
+      resultadoClass = "palavra venceu"
+    }else if(ganhou === false){
+      resultadoClass = "palavra perdeu"
+    }else if(!ganhou){
+      resultadoClass = "palavra"
+    }
+  
 
     return (
       <div className="tela-jogo">
@@ -18,7 +35,7 @@ export default function Jogo({arrayPalavra, setLiberaJogo, setJaClicou, jaClicou
         </div>
         <div className="container canto">
             <button onClick={() => iniciaJogo()} className="iniciar">Escolha palavra</button>
-            <div className="palavra">   
+            <div className={resultadoClass}>   
               {contaLetra}              
             </div>
         </div>

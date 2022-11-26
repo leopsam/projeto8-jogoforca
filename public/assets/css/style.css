@@ -144,3 +144,11 @@
 .esconde{
     display: none;
 }
+
+.venceu{
+    color: green;
+}
+
+.perdeu{
+    color: red;
+}
