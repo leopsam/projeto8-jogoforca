@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-export default function Chute({liberaJogo, arrayPalavra, chutePalavra, setChutePalavra, setLiberaJogo, setErro, setGanhou, setContaLetra}) {
+export default function Chute({liberaJogo, setAtivado, ativado, arrayPalavra, chutePalavra, setChutePalavra, setLiberaJogo, setErro, setGanhou, setContaLetra}) {
   let palavraCerta = arrayPalavra.join('') 
 
     return (
@@ -11,8 +9,13 @@ export default function Chute({liberaJogo, arrayPalavra, chutePalavra, setChuteP
                 value={chutePalavra}
                 data-test="guess-input"                               
                 onChange={c => setChutePalavra(c.target.value)}
-                disabled="disabled" />
-            <button className={liberaJogo}  data-test="guess-button" onClick={verificaChute} disabled="disabled" >Chutar</button>
+                disabled={ativado} />
+            <button className={liberaJogo}  
+                    data-test="guess-button" 
+                    onClick={verificaChute} 
+                    disabled={ativado}>
+                    Chutar
+            </button>
       </div> 
     );
 
@@ -22,13 +25,13 @@ export default function Chute({liberaJogo, arrayPalavra, chutePalavra, setChuteP
       if(chutePalavra === palavraCerta){
         setGanhou(true)
         setLiberaJogo("tecla teclas-desativadas")
+        setAtivado('disabled')
         
       }else{
         setErro(6)
         setGanhou(false)
         setLiberaJogo("tecla teclas-desativadas")
-        
+        setAtivado('disabled')        
       }
-
     }
-  }
+}

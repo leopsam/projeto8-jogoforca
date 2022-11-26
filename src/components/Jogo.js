@@ -1,9 +1,5 @@
-import palavras from "../palavras";
-export default function Jogo({arrayPalavra, setLetraUsada, resultadoClass, setLiberaJogo, setChutePalavra, setArrayPalavra, setJaClicou, setErro, jaClicou, setContaLetra, contaLetra, erro, ganhou, setGanhou}) {  
-  function comparador() {
-    return Math.random() - 0.5;
-  }
-  
+export default function Jogo({arrayPalavra, setAtivado, setLetraUsada, resultadoClass, setLiberaJogo, setChutePalavra, setErro, setContaLetra, contaLetra, erro, ganhou, setGanhou}) {  
+    
   function iniciaJogo(){      
       setContaLetra(arrayPalavra.map((cl) => ' _ '))          
       setLiberaJogo("tecla teclas-ativadas")
@@ -11,11 +7,9 @@ export default function Jogo({arrayPalavra, setLetraUsada, resultadoClass, setLi
       setErro(0)
       setLetraUsada([])
       setChutePalavra('')
-
-      console.log(contaLetra)
+      setAtivado('')
+      console.log(arrayPalavra)
   }
-  
-
 
     if(ganhou === true){
       resultadoClass = "palavra venceu"
@@ -23,8 +17,7 @@ export default function Jogo({arrayPalavra, setLetraUsada, resultadoClass, setLi
       resultadoClass = "palavra perdeu"
     }else if(!ganhou){
       resultadoClass = "palavra"
-    }
-  
+    }  
 
     return (
       <div className="tela-jogo">
@@ -41,9 +34,3 @@ export default function Jogo({arrayPalavra, setLetraUsada, resultadoClass, setLi
       
     );
   }
-
-
-  
-  
-
-  

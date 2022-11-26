@@ -8,22 +8,17 @@ function comparador() {
 	return Math.random() - 0.5;
 }
 
-
-
 export default function App() { 
   const [erro, setErro] = useState(0)
   const [liberaJogo, setLiberaJogo] = useState("tecla teclas-desativadas")
   const [letraUsada, setLetraUsada] = useState([])
   const [contaLetra, setContaLetra] = useState()
-  const [jaClicou, setJaClicou] = useState(false)
   const [chutePalavra, setChutePalavra] = useState('')
   const [ganhou, setGanhou] = useState('')
   const [contagem, setContagem] = useState(0)
+  const [ativado, setAtivado] = useState('disabled')
   const [arrayPalavra, setArrayPalavra] = React.useState(palavras.sort(comparador)[0].split(''))
   let resultadoClass;
-  console.log(arrayPalavra)
-  
-
   const alfabeto  = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   
   return (
@@ -31,18 +26,16 @@ export default function App() {
       <Jogo 
       arrayPalavra={arrayPalavra}
       setLiberaJogo={setLiberaJogo}
-      jaClicou={jaClicou}
-      setJaClicou={setJaClicou}
       contaLetra={contaLetra}
       setContaLetra={setContaLetra}
       erro={erro}
       ganhou={ganhou}
       setGanhou={setGanhou}
       setErro={setErro}
-      setArrayPalavra={setArrayPalavra}
       setLetraUsada={setLetraUsada}
       setChutePalavra={setChutePalavra}
       resultadoClass={resultadoClass}
+      setAtivado={setAtivado}
       />
 
       <Letras 
@@ -54,13 +47,11 @@ export default function App() {
       setContaLetra={setContaLetra}
       contaLetra={contaLetra}
       setErro={setErro}
-      erro={erro} 
-      contagem={contagem}
-      setContagem={setContagem}
+      erro={erro}
       setLiberaJogo={setLiberaJogo}
       setGanhou={setGanhou}
-      ganhou={ganhou}
-      resultadoClass={resultadoClass}
+      ativado={ativado}
+      setAtivado={setAtivado}
       />
 
       <Chute 
@@ -72,9 +63,9 @@ export default function App() {
       setGanhou={setGanhou}
       setContaLetra={setContaLetra}
       setLiberaJogo={setLiberaJogo}
+      ativado={ativado}
+      setAtivado={setAtivado}
       />
-    </div>
-    
+    </div>    
   );
 }
-
