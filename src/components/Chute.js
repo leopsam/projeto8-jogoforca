@@ -9,7 +9,8 @@ export default function Chute({liberaJogo, arrayPalavra, chutePalavra, setChuteP
             <input 
                 tipe="text" 
                 value={chutePalavra}
-                data-test="guess-input"                
+                data-test="guess-input" 
+                disabled=""               
                 onChange={c => setChutePalavra(c.target.value)}/>
             <button className={liberaJogo}  data-test="guess-button" onClick={verificaChute}>Chutar</button>
       </div> 

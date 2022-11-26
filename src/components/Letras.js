@@ -7,6 +7,7 @@ export default function Letras({letras, liberaJogo, resultadoClass, setLetraUsad
             onClick={( ) => letraSelecionada(letra)} 
             data-test="letter"                 
             key={letra} 
+            disabled="" 
             className={letraUsada.includes(letra) ? "tecla teclas-desativadas" : liberaJogo}>{letra}
           </div>))}
       </div> 
