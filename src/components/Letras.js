@@ -3,13 +3,15 @@ export default function Letras({letras, liberaJogo, resultadoClass, setLetraUsad
     return (
       <div className="teclado">
         {letras.map((letra) => (
-          <div 
+          <button 
             onClick={( ) => letraSelecionada(letra)} 
             data-test="letter"                 
             key={letra} 
-            disabled="" 
-            className={letraUsada.includes(letra) ? "tecla teclas-desativadas" : liberaJogo}>{letra}
-          </div>))}
+            
+            className={letraUsada.includes(letra) ? "tecla teclas-desativadas" : liberaJogo}
+            disabled="disabled" 
+            >{letra}
+          </button>))}
       </div> 
     ); 
 
